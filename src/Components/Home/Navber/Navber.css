@@ -1,0 +1,12 @@
+.nav-link:hover {
+    background-color:#17A2B8;
+    border-radius: 5px;
+    color:#343A40 !important;
+    font-weight: 500;
+} 
+.btn:hover{
+    background-color:#17A2B8;
+    border-radius: 5px;
+    color:#343A40 !important;
+
+} 
