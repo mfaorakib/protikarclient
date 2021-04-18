@@ -43,3 +43,12 @@ export const emailSignIn=()=>{
       // ..
     });
 }
+
+export const allLogOut=()=>{
+  return firebase.auth().signOut().then(() => {
+        
+     }).catch((error) => {
+       return error;
+     });
+
+} 

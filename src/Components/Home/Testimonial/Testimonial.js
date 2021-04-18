@@ -9,7 +9,7 @@ const Testimonial = () => {
 
 
   useEffect(() => {
-      fetch('http://localhost:4000/Review')
+      fetch('https://completewebsiteservermfaorakib.herokuapp.com/Review')
           .then(res => res.json())
           .then(data => setReviews(data))
 

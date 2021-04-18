@@ -16,7 +16,7 @@ const stripePromise = loadStripe('pk_test_51IeFqBF3UEOO6IxUMBOS948f0UdMfOSrYDwZf
     const {ServiceTitle,Price,imageURL} =services;
     console.log(ServiceTitle)
      useEffect(() => {
-         const uri = `http://localhost:4000/BuyServices/${id}` 
+         const uri = `https://completewebsiteservermfaorakib.herokuapp.com/BuyServices/${id}` 
                
         fetch(uri) 
         .then(res => res.json())

@@ -8,7 +8,7 @@ const BuyList = () => {
 
    
   useEffect(() => {
-    const uri = "http://localhost:4000/orderList" 
+    const uri = "https://completewebsiteservermfaorakib.herokuapp.com/orderList" 
           
    fetch(uri) 
    .then(res => res.json())

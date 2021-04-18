@@ -6,7 +6,7 @@ const { register, handleSubmit, formState: { errors } } = useForm();
   console.log(data)
 
   
-  fetch("http://localhost:4000/addadmin",{
+  fetch("https://completewebsiteservermfaorakib.herokuapp.com/addadmin",{
    method: 'POST',
    headers:{
        'Content-Type':'application/json'

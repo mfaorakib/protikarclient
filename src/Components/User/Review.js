@@ -14,7 +14,7 @@ const Review = () => {
                Designation: data.Designation,
                DetailsReview:data.DetailsReview
            }
-    const url = "http://localhost:4000/addReview";
+    const url = "https://completewebsiteservermfaorakib.herokuapp.com/addReview";
     
     fetch(url,{
      method: 'POST',

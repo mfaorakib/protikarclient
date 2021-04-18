@@ -7,7 +7,7 @@ const OrderList = () => {
   const [statusId, selectedId] = useState("") 
    
   useEffect(() => {
-    const uri = "http://localhost:4000/orderList" 
+    const uri = "https://completewebsiteservermfaorakib.herokuapp.com/orderList" 
           
    fetch(uri) 
    .then(res => res.json())
@@ -26,7 +26,7 @@ const handleUpdateStatus=(id)=>{
     const orderslist ={
       Status
     }
-  fetch(`http://localhost:4000/update/`+statusId,{
+  fetch(`https://completewebsiteservermfaorakib.herokuapp.com/update/`+statusId,{
     method:"PATCH",
     headers:{'Content-Type':'application/json'},
     body:JSON.stringify(orderslist)

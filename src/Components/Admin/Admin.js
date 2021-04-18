@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import AddService from './AddService';
@@ -12,8 +12,10 @@ import OrderList from './OrderList';
 import BuyList from '../User/BuyList';
 import Review from '../User/Review'
 import PaymentCard from '../User/PaymentCard'
+import { UserContext } from '../../App';
 
 const Admin = () => {
+  const { loggedInUser, setLoggedInUser,IsAdmin,setIsAdmin } = useContext(UserContext)
     const [role, setRole] = useState({
         action:'AddService'
     })
@@ -21,45 +23,46 @@ const Admin = () => {
     return (
        
           <div style={{width: '99%',marginTop:'20px'}}>
-       
+             
                 <Row>
                 <Col class="col-6" style={{padding:'20px'}} sm={4}> 
+               {IsAdmin? <> 
                 <Link style={{Color:'White',textDecoration:'none',paddingTop:'10px'}} onClick ={()=>setRole({action:'OrderList'})}>  
               
              
-                <Button variant="outline-secondary" style={{width:'10rem',paddingTop:'10px'}}> <img style={{height:'1rem',
-                fontSize:'3.75em'}} src={List} alt="Bootstrap"></img> OrderList</Button>    
-             
-      
-                </Link>
-                <br/>
-                <br/>
-                <Link  style={{Color:'White',textDecoration:'none',paddingTop:'10px'}} onClick ={()=>setRole({action:'AddService'})} > 
-                
               <Button variant="outline-secondary" style={{width:'10rem',paddingTop:'10px'}}> <img style={{height:'1rem',
-              fontSize:'3.75em'}} src={plus} alt="Bootstrap"></img> AddService</Button>
+              fontSize:'3.75em'}} src={List} alt="Bootstrap"></img> OrderList</Button>    
+           
+    
+              </Link>
+              <br/>
+              <br/>
+              <Link  style={{Color:'White',textDecoration:'none',paddingTop:'10px'}} onClick ={()=>setRole({action:'AddService'})} > 
+              
+            <Button variant="outline-secondary" style={{width:'10rem',paddingTop:'10px'}}> <img style={{height:'1rem',
+            fontSize:'3.75em'}} src={plus} alt="Bootstrap"></img> AddService</Button>
 
-                </Link>
-                <br/>
-                
-                <br/>
-                <Link style={{Color:'White',textDecoration:'none',paddingTop:'10px'}} onClick ={()=>setRole({action:'MakeAdmin'})}   > 
+              </Link>
+              <br/>
               
-                <Button variant="outline-secondary" style={{width:'10rem',paddingTop:'10px'}}> <img style={{height:'1rem',
-               fontSize:'3.75em'}} src={AddUser} alt="Bootstrap"></img>MakeAdmin</Button>    
-       
-                </Link>
-                <br/>
-                <br/>
-                <Link style={{Color:'White',textDecoration:'none',paddingTop:'10px'}} onClick ={()=>setRole({action:'ManageService'})}>  
-              
-             
-                <Button variant="outline-secondary" style={{width:'10rem',paddingTop:'10px'}}> <img style={{height:'1rem',
-                fontSize:'3.75em'}} src={ManageServices} alt="Bootstrap"></img>ManageService</Button>    
-             
-      
-                </Link>
-                 <br/>
+              <br/>
+              <Link style={{Color:'White',textDecoration:'none',paddingTop:'10px'}} onClick ={()=>setRole({action:'MakeAdmin'})}   > 
+            
+              <Button variant="outline-secondary" style={{width:'10rem',paddingTop:'10px'}}> <img style={{height:'1rem',
+             fontSize:'3.75em'}} src={AddUser} alt="Bootstrap"></img>MakeAdmin</Button>    
+     
+              </Link>
+              <br/>
+              <br/>
+              <Link style={{Color:'White',textDecoration:'none',paddingTop:'10px'}} onClick ={()=>setRole({action:'ManageService'})}>  
+            
+           
+              <Button variant="outline-secondary" style={{width:'10rem',paddingTop:'10px'}}> <img style={{height:'1rem',
+              fontSize:'3.75em'}} src={ManageServices} alt="Bootstrap"></img>ManageService</Button>    
+           
+    
+              </Link> </>:<>
+              <br/>
                  <br/>
                 <Link  style={{Color:'White',textDecoration:'none',paddingTop:'10px'}} onClick ={()=>setRole({action:'review'})} > 
                 
@@ -76,9 +79,12 @@ const Admin = () => {
                   </Link>
                 <br/><br/>
                 
-                </Col>
+               </>}
+                
+                 </Col>
                  
           <Col sm={8}> 
+
                   {
                    role.action ==='AddService' && ( <div> <AddService></AddService></div>)
                   }

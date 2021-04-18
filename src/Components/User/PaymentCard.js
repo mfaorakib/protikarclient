@@ -48,7 +48,7 @@ const PaymentCard = ({Price,displayName,email,ServiceTitle,imageURL}) => {
 
   const handleSubmit = async event => {
 
-    fetch("http://localhost:4000/addOrderInfo", {
+    fetch("https://completewebsiteservermfaorakib.herokuapp.com/addOrderInfo", {
       method: "POST",
       headers: {
           "Content-Type": "application/json",

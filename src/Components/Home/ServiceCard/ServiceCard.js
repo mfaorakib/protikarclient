@@ -7,6 +7,7 @@ const ServiceCard = ({ Service }) => {
   const history = useHistory()
 
     const handleAddCart=(id)=>{
+        
         history.push('/BuyServices/'+id )  
 
     }
